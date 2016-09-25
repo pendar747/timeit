@@ -1,0 +1,7 @@
+<div *ngFor="let year of cal | mapToIterable">
+  <h2>{{year.key}}</h2>
+  <div *ngFor="let month of year.value | mapToIterable">
+    <h3 >{{month.key | month}}</h3>
+    <day *ngFor="let day of month.value | mapToIterable" [day]='day.value' ></day> 
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<li (dblclick)="edit()" *ngIf="!isEditing">
+    <span>{{act.name}}</span>
+    <span class="time-tag">{{act.time}} hours</span>
+</li>
+<form *ngIf="isEditing" (submit)='save()'>
+  <input autofocus [(ngModel)]="act.name" name="newName" placeholder="Activity">
+  <input type="number" class="time" name="time" [(ngModel)]="act.time">
+  <button type="submit">Save</button>
+</form>
+

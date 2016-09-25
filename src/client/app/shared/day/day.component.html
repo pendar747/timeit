@@ -1,0 +1,6 @@
+<div>
+    <h4>{{day.date | date:"dd"}}<sup>th</sup></h4>   
+    <ul>
+        <activity *ngFor='let act of day.acts' (changeEvent)='saveActivity($event)' [act]='act'></activity>
+    </ul>
+</div>

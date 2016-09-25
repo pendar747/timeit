@@ -1,0 +1,11 @@
+<p>
+  What did you spent time on today?
+</p>
+
+<form (submit)="addActivity()">
+  <input [(ngModel)]="newName" name="newName" placeholder="Activity">
+  <input type="number" id="time" name="time" [(ngModel)]="time">
+  <button type="submit">Add</button>
+</form>
+
+<day [day]='day'></day>

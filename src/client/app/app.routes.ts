@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { AboutRoutes } from './about/index';
-import { HomeRoutes } from './home/index';
+import { TimelineRoutes } from './timeline/index';
+import { TodayRoutes } from './today/index';
 
 export const routes: Routes = [
-  ...HomeRoutes,
-  ...AboutRoutes
+  ...TodayRoutes,
+  ...TimelineRoutes
 ];

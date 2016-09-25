@@ -5,23 +5,31 @@ import { RouterModule } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar/index';
 import { NavbarComponent } from './navbar/index';
-import { NameListService } from './name-list/index';
+import {ActivityComponent} from './activity/activity.component';
+import {Activity} from './activity/activity.model';
+import {ActivityService} from './activity/activity.service';
+import {LogService} from './log.service';
+import {MapToIterablePipe} from './mapToIterable.pipe';
+import {NumToMonthNamePipe} from './numberToMonth.pipe';
+import {DayComponent} from './day/day.component';
+import {DayService} from './day/day.service';
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
  */
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
-  declarations: [ToolbarComponent, NavbarComponent],
+  imports: [CommonModule, RouterModule, FormsModule],
+  declarations: [DayComponent, ToolbarComponent, NavbarComponent, ActivityComponent, MapToIterablePipe, NumToMonthNamePipe],
   exports: [ToolbarComponent, NavbarComponent,
-    CommonModule, FormsModule, RouterModule]
+    CommonModule, FormsModule, RouterModule, ActivityComponent, MapToIterablePipe, 
+    NumToMonthNamePipe, DayComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [NameListService]
+      providers: [ActivityService, LogService, DayService]
     };
   }
 }
